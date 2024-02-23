@@ -1,4 +1,4 @@
-# sentinel-automated-deploy
+# Sentinel Automated Deploy
 
 https://learn.microsoft.com/en-us/azure/architecture/example-scenario/devops/automate-sentinel-integration
 
