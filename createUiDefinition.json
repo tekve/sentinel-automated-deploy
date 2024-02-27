@@ -233,7 +233,7 @@
                               {
                                   "label": "Azure Active Directory",
                                   "description": "The Azure Active Directory solution for Microsoft Sentinel enables you to ingest Azure Active Directory Audit,Sign-in,Provisioning,Risk Events and Risky User/Service Principal logs using Diagnostic Settings into Microsoft Sentinel.",
-                                  "value": "Azure Active Directory"
+                                  "value": "Microsoft Entra ID"
                               },
                               {
                                   "label": "Azure Activity",
