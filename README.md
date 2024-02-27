@@ -1,7 +1,7 @@
-# Sentinel Automated Deploy
+# Microsoft Sentinel All-in-One
 
-https://learn.microsoft.com/en-us/azure/architecture/example-scenario/devops/automate-sentinel-integration
+## Try it now!
 
-# Potential use cases
-
-Microsoft Sentinel as a service. This development framework integrates service lifecycle management principles. These principles suit simple or complex teams like MSSPs who run repeatable, standardized actions across multiple customer tenants while combining the power of Azure DevOps and Azure Lighthouse. For example, a team that needs to publish Microsoft Sentinel use cases for a new threat actor or ongoing campaign could use this solution.
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Sentinel%2Fmaster%2FTools%2FSentinel-All-In-One%2Fv2%2Fazuredeploy.json/createUIDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Sentinel%2Fmaster%2FTools%2FSentinel-All-In-One%2Fv2%2FcreateUiDefinition.json" target="_blank">
+    <img src="https://aka.ms/deploytoazurebutton""/>
+</a>
