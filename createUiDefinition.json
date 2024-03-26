@@ -232,7 +232,7 @@
                           "allowedValues": [
                               {
                                   "label": "Microsoft Entra ID",
-                                  "description": "The Azure Active Directory solution for Microsoft Sentinel enables you to ingest Azure Active Directory Audit,Sign-in,Provisioning,Risk Events and Risky User/Service Principal logs using Diagnostic Settings into Microsoft Sentinel.",
+                                  "description": "The Microsoft Entra ID solution for Microsoft Sentinel enables you to ingest Entra ID Audit,Sign-in,Provisioning,Risk Events and Risky User/Service Principal logs using Diagnostic Settings into Microsoft Sentinel.",
                                   "value": "Microsoft Entra ID"
                               },
                               {
