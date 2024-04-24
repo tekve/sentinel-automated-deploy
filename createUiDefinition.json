@@ -178,11 +178,11 @@
                       "constraints": {
                           "allowedValues": [
                               {
-                                  "label": "Azure Active Directory",
+                                  "label": "Entra ID",
                                   "value": "AzureActiveDirectory"
                               },
                               {
-                                  "label": "Active Directory (requires Microsoft Defender for Identity)",
+                                  "label": "Active Directory (on-prem, requires Microsoft Defender for Identity)",
                                   "value": "ActiveDirectory"
                               }
                           ],
@@ -416,12 +416,12 @@
                       "constraints": {
                           "allowedValues": [
                             {
-                                "label": "Azure Active Directory",
+                                "label": "Entra ID", 
                                 "description": "Relevant license and Global Admin or Security Admin permission required.",
                                 "value": "AzureActiveDirectory"
                             },  
                             {
-                                "label": "Azure Active Directory Identity Protection",
+                                "label": "Entra ID Identity Protection", 
                                 "description": "Relevant license and Global Admin or Security Admin permission required.",
                                 "value": "AzureActiveDirectoryIDP"
                             },
@@ -478,11 +478,11 @@
                   {
                     "name": "aadStreams",
                       "type": "Microsoft.Common.DropDown",
-                      "label": "Select Azure Active Directory log types to enable",
+                      "label": "Select Entra ID log types to enable",
                       "placeholder": "",
                       "multiselect": true,
                       "defaultValue": [{"value": "SignInLogs"}, {"value": "AuditLogs"}],
-                      "toolTip": "Select Azure Active Directory log types you would like to stream to the workspace",
+                      "toolTip": "Select Entra ID log types you would like to stream to the workspace",
                       "constraints": {
                           "allowedValues": [
                               {
