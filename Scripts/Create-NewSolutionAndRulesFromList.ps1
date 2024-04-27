@@ -8,7 +8,7 @@ param(
 # Hankitaan konteksti
 # Get context
 $context = Get-AzContext
-
+# API version can be changed
 $apiversion = "?2024-01-01-preview"
 # Kirjaudutaan Azureen
 # Login to Azure
