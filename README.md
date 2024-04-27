@@ -63,6 +63,7 @@ Command line:
     -SeveritiesToInclude <severities>     # Severities of analytic rules to activate
     -Region <location>                    # Location of the resource group
 
+# Script to deploy analytic rules
 
 
 ### References
@@ -75,3 +76,6 @@ To specify a solution to install use the format or list of following objects for
     "value": "Microsoft Entra ID"
 }
 "
+
+
+
