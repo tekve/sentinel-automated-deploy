@@ -63,7 +63,6 @@ Command line:
     -SeveritiesToInclude <severities>     # Severities of analytic rules to activate
     -Region <location>                    # Location of the resource group
 
-# Script to deploy analytic rules
 
 
 ### References
@@ -77,5 +76,9 @@ To specify a solution to install use the format or list of following objects for
 }
 "
 
+### To-Do
 
+- Can we deploy to customer environment using this automation and lighthouse
+  - Errors when creating entra id connection because it requires Entra ID permissions, RBAC permissions not enough for that?
+- 
 

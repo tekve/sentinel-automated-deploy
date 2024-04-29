@@ -9,7 +9,7 @@ param(
 # Get context
 $context = Get-AzContext
 # API version can be changed
-$apiversion = "?2024-01-01-preview"
+$apiversion = "?api-version=2024-01-01-preview"
 # Kirjaudutaan Azureen
 # Login to Azure
 if (!$context) {
@@ -47,7 +47,7 @@ $alertUri = "$baseUri/providers/Microsoft.SecurityInsights/alertRules/"
 
 # Haetaan lista kaikista Content Hub ratkaisuista
 # Get a list of all solutions in Content Hub
-$url = $baseUri + "/providers/Microsoft.SecurityInsights/contentProductPackages" + $apiversion # ?api-version=2023-04-01-preview"
+$url = $baseUri + "/providers/Microsoft.SecurityInsights/contentProductPackages?api-version=2023-04-01-preview"
 $allSolutions = (Invoke-RestMethod -Method "Get" -Uri $url -Headers $authHeader ).value
 
 # Asennetaan jokainen yksittäinen CH-ratkaisu
@@ -59,7 +59,7 @@ foreach ($deploySolution in $Solutions) {
         Write-Error "Content Hub -ratkaisun hakeminen epäonnistui nimellä $deploySolution" 
     }
     else {
-        $solutionURL = $baseUri + "/providers/Microsoft.SecurityInsights/contentProductPackages/$($singleSolution.name)" + $apiversion # ?api-version=2023-04-01-preview"
+        $solutionURL = $baseUri + "/providers/Microsoft.SecurityInsights/contentProductPackages/$($singleSolution.name)?api-version=2023-04-01-preview"
         $solution = (Invoke-RestMethod -Method "Get" -Uri $solutionURL -Headers $authHeader )
         Write-Host "Content Hub ratkaisun nimi: " $solution.name
         # Ratkaisun sisältö
@@ -87,7 +87,7 @@ foreach ($deploySolution in $Solutions) {
         if ($deploymentName.Length -ge 64){
             $deploymentName = $deploymentName.Substring(0,64)
         }
-        $installURL = "https://management.azure.com/subscriptions/$($SubscriptionId)/resourcegroups/$($ResourceGroup)/providers/Microsoft.Resources/deployments/" + $deploymentName + $apiversion # "?api-version=2021-04-01"
+        $installURL = "https://management.azure.com/subscriptions/$($SubscriptionId)/resourcegroups/$($ResourceGroup)/providers/Microsoft.Resources/deployments/" + $deploymentName + "?api-version=2021-04-01"
         #$templateUri = $singleSolution.plans.artifacts | Where-Object -Property "name" -EQ "DefaultTemplate"
         Write-Host "Asennetaan ratkaisua:  $deploySolution"
         
@@ -118,7 +118,7 @@ Start-Sleep -Seconds 60
 
 # URL, jolla saadaan kaikki analyysisääntöjen pohjat
 # URL to get all the needed Analytic Rule templates
-$solutionURL = $baseUri + "/providers/Microsoft.SecurityInsights/contentTemplates" + $apiversion #?api-version=2023-05-01-preview"
+$solutionURL = $baseUri + "/providers/Microsoft.SecurityInsights/contentTemplates?api-version=2023-05-01-preview"
 # Suodatetaan ratkaisuista vain analyysisäännöt
 # Add a filter only return analytic rule templates
 $solutionURL += "&%24filter=(properties%2FcontentKind%20eq%20'AnalyticsRule')"
@@ -190,7 +190,7 @@ foreach ($result in $results ) {
             $guid = (New-Guid).Guid
             # Säännön luomiseen tarvittava URL
             # Create the URI we need to create the alert.
-            $alertUri = $BaseAlertUri + $guid + $apiversion #"?api-version=2022-12-01-preview"
+            $alertUri = $BaseAlertUri + $guid + "?api-version=2022-12-01-preview"
             try {
                 Write-Host "Yritetään luoda sääntö $($displayName)"
                 $verdict = Invoke-RestMethod -Uri $alertUri -Method Put -Headers $authHeader -Body ($body | ConvertTo-Json -EnumsAsStrings -Depth 50)
@@ -213,7 +213,7 @@ foreach ($result in $results ) {
                     }
                 }
                 Write-Output "    Päivitetään metadataa...."
-                $metaURI = $BaseMetaURI + $verdict.name + $apiversion #"?api-version=2022-01-01-preview"
+                $metaURI = $BaseMetaURI + $verdict.name + "?api-version=2022-01-01-preview"
                 $metaVerdict = Invoke-RestMethod -Uri $metaURI -Method Put -Headers $authHeader -Body ($metabody | ConvertTo-Json -EnumsAsStrings -Depth 5)
                 Write-Output "Onnistunut"
             }
