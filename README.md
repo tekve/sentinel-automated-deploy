@@ -80,5 +80,23 @@ To specify a solution to install use the format or list of following objects for
 
 - Can we deploy to customer environment using this automation and lighthouse
   - Errors when creating entra id connection because it requires Entra ID permissions, RBAC permissions not enough for that?
+Security Administrator (Entra ID built-in role) role is required for setting Entra ID diagnostic logs: 194ae4cb-b126-40b2-bd5b-6091b380977d
+
 - 
 
+# Supported connectors
+The following table summarizes permissions, licenses and permissions needed and related cost to enable each Data Connector:
+
+**Data Connector** | **License** | **Permissions** | **Cost**
+---|---|---|---
+Entra ID (Tenant scope version only)	| Any AAD license	| Global Admin or Security Admin	| Billed
+Entra ID Identity Protection | AAD Premium 2	| Global Admin or Security Admin	| Free
+Azure Activity	| None | Subscription Reader	| Free
+Dynamics 365	| D365 license	| Global Admin or Security Admin	| Billed
+Microsoft 365 Defender	| M365D license	| Global Admin or Security Admin	| Free
+Microsoft Defender for Cloud	| MDC license	| Security Reader	| Free
+Microsoft Insider Risk Management	| IRM license	| Global Admin or Security Admin	| Free
+Microsoft PowerBi	| PowerBi license	| Global Admin or Security Admin	| Billed
+Microsoft Project	| MS Project license	| Global Admin or Security Admin	| Billed
+Office 365	| None	| Global Admin or Security Admin	| Free
+Threat Intelligence Platforms	| None	| Global Admin or Security Admin	| Billed
